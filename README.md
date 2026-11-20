@@ -55,3 +55,13 @@ The form includes a hidden honeypot field and uses the provider's default anti-s
 ## Monochrome design
 
 This edition uses a strict black/white editorial palette with greyscale portrait photography, shorter academic text, high-contrast buttons and a compact collaboration form.
+
+
+## Learning & Methods hub (new)
+
+- `learning.html` — original, concise educational overview of epidemiological study design, disease-frequency measures, temporal/spatial analysis, statistical modeling, machine learning, and methodological sources.
+- `learning/r/01_counts_and_rates.R` — original base-R worked example with synthetic data, definitions, safeguards, output and interpretation questions. No real outbreak data.
+- Homepage has a compact Learning & Methods teaser and navigation link.
+- No third-party textbooks, PDFs, scans, diagrams or externally supplied textbook datasets are included in this package.
+- The learning example is illustrative, not a validated research workflow. Before using with real data, check numerator, denominator, time-at-risk, case definitions, sampling, missingness and reporting completeness.
+- Before distributing additional code, test it and check dependency licenses. For research use, plan a separate, reviewed open-source methods repository.
