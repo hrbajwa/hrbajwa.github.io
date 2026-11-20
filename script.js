@@ -1,57 +1,27 @@
-// Academic website interactions: accessible mobile navigation and publication filters.
-const menuButton = document.querySelector('.nav-toggle');
-const primaryNav = document.querySelector('#primary-nav');
-if (menuButton && primaryNav) {
-  menuButton.addEventListener('click', () => {
-    const expanded = menuButton.getAttribute('aria-expanded') === 'true';
-    menuButton.setAttribute('aria-expanded', String(!expanded));
-    menuButton.setAttribute('aria-label', expanded ? 'Open navigation menu' : 'Close navigation menu');
-    primaryNav.classList.toggle('is-open', !expanded);
-  });
-  primaryNav.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
-    primaryNav.classList.remove('is-open');
-    menuButton.setAttribute('aria-expanded', 'false');
-    menuButton.setAttribute('aria-label', 'Open navigation menu');
-  }));
-  document.addEventListener('keydown', event => {
-    if (event.key === 'Escape' && primaryNav.classList.contains('is-open')) {
-      primaryNav.classList.remove('is-open');
-      menuButton.setAttribute('aria-expanded', 'false');
-      menuButton.setAttribute('aria-label', 'Open navigation menu');
-      menuButton.focus();
-    }
-  });
-}
-
-const filterButtons = [...document.querySelectorAll('.filter')];
-const publications = [...document.querySelectorAll('.publication')];
-const searchBox = document.querySelector('#pub-search');
-const resultsCount = document.querySelector('#results-count');
-const emptyResults = document.querySelector('#empty-results');
-let selectedFilter = 'all';
-function updatePublications() {
-  const query = (searchBox?.value || '').trim().toLocaleLowerCase();
-  let shown = 0;
-  publications.forEach(pub => {
-    const categoryMatch = selectedFilter === 'all' || pub.dataset.category === selectedFilter;
-    const queryMatch = !query || `${pub.dataset.search} ${pub.textContent}`.toLocaleLowerCase().includes(query);
-    const visible = categoryMatch && queryMatch;
-    pub.hidden = !visible;
-    if (visible) shown++;
-  });
-  if (resultsCount) resultsCount.textContent = `Showing ${shown} selected publication${shown === 1 ? '' : 's'}`;
-  if (emptyResults) emptyResults.hidden = shown !== 0;
-}
-filterButtons.forEach(button => button.addEventListener('click', () => {
-  selectedFilter = button.dataset.filter;
-  filterButtons.forEach(other => {
-    const selected = other === button;
-    other.classList.toggle('is-active', selected);
-    other.setAttribute('aria-pressed', String(selected));
-  });
-  updatePublications();
-}));
-searchBox?.addEventListener('input', updatePublications);
-updatePublications();
-const currentYear = document.querySelector('#year');
-if (currentYear) currentYear.textContent = String(new Date().getFullYear());
+(() => {
+  const toggle = document.querySelector('.menu-toggle');
+  const nav = document.getElementById('site-nav');
+  if (toggle && nav) {
+    toggle.addEventListener('click', () => {
+      const open = nav.classList.toggle('is-open');
+      toggle.setAttribute('aria-expanded', String(open));
+      toggle.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation');
+    });
+    nav.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+      nav.classList.remove('is-open');
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.setAttribute('aria-label', 'Open navigation');
+    }));
+  }
+  // Align the delivered email subject with the visitor's subject field.
+  const collaborationForm = document.getElementById('collaboration-form');
+  if (collaborationForm) {
+    collaborationForm.addEventListener('submit', () => {
+      const subject = document.getElementById('collab-subject').value.trim();
+      const destination = document.getElementById('form-email-subject');
+      destination.value = subject ? `Academic website: ${subject.slice(0, 140)}` : 'New collaboration inquiry from academic website';
+    });
+  }
+  const year = document.getElementById('year');
+  if (year) year.textContent = new Date().getFullYear();
+})();
