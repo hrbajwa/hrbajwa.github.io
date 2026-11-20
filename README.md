@@ -62,6 +62,18 @@ This edition uses a strict black/white editorial palette with greyscale portrait
 - `learning.html` — original, concise educational overview of epidemiological study design, disease-frequency measures, temporal/spatial analysis, statistical modeling, machine learning, and methodological sources.
 - `learning/r/01_counts_and_rates.R` — original base-R worked example with synthetic data, definitions, safeguards, output and interpretation questions. No real outbreak data.
 - Homepage has a compact Learning & Methods teaser and navigation link.
-- No third-party textbooks, PDFs, scans, diagrams or externally supplied textbook datasets are included in this package.
+- No third-party textbook PDFs, figures or supplied textbook datasets are included. Two user-provided overview diagrams are included as separate original website image assets.
 - The learning example is illustrative, not a validated research workflow. Before using with real data, check numerator, denominator, time-at-risk, case definitions, sampling, missingness and reporting completeness.
 - Before distributing additional code, test it and check dependency licenses. For research use, plan a separate, reviewed open-source methods repository.
+
+## Visual guides and click-to-enlarge viewer
+
+- `assets/study-design-guide-preview.webp` and `assets/analytical-approach-guide-preview.webp` are responsive webpage previews.
+- `assets/study-design-guide.png` and `assets/analytical-approach-guide.png` are the full-resolution user-provided diagrams.
+- Click a preview to open a keyboard-accessible dialog. Press **Esc** or **Close** to exit, select **Zoom to 100%** to scroll over the original-size diagram, or open the original in a separate tab.
+- The diagrams simplify study planning and model selection; their order and arrows do not create an evidence hierarchy or replace discipline-specific method selection.
+- The R script includes known-answer sanity checks but was not executed with R during this generation because R was not installed in the build environment. Do not claim it is validated for research.
+
+## Update online without PowerShell
+
+Upload the **contents** of the extracted folder to `https://github.com/hrbajwa/hrbajwa.github.io/upload/main`. Existing files with the same path will be replaced. New diagram PNG/WEBP files will appear in `assets/`. Confirm the commit and successful deployment in Actions.

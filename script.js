@@ -25,3 +25,40 @@
   const year = document.getElementById('year');
   if (year) year.textContent = new Date().getFullYear();
 })();
+
+// Accessible learning image viewer. Unenhanced links still open original PNG.
+(() => {
+  const dialog = document.getElementById('figure-lightbox');
+  if (!dialog || typeof dialog.showModal !== 'function') return;
+  const large = document.getElementById('figure-lightbox-image');
+  const title = document.getElementById('figure-lightbox-title');
+  const closeButton = dialog.querySelector('.figure-lightbox-close');
+  const viewport = dialog.querySelector('.figure-lightbox-viewport');
+  const zoomButton = dialog.querySelector('.figure-lightbox-zoom');
+  const original = dialog.querySelector('.figure-lightbox-original');
+  let lastTrigger = null;
+  const zoom = (expanded) => {
+    viewport.classList.toggle('is-zoomed', expanded);
+    zoomButton.setAttribute('aria-pressed', String(expanded));
+    zoomButton.textContent = expanded ? 'Fit to screen' : 'Zoom to 100%';
+    viewport.scrollTop = 0;
+    viewport.scrollLeft = 0;
+  };
+  document.querySelectorAll('a[data-figure-full]').forEach(link => {
+    link.addEventListener('click', event => {
+      event.preventDefault();
+      lastTrigger = link;
+      large.src = link.dataset.figureFull;
+      large.alt = link.querySelector('img')?.alt || 'Learning infographic';
+      title.textContent = link.dataset.figureTitle || 'Learning diagram';
+      original.href = link.dataset.figureFull;
+      zoom(false);
+      dialog.showModal();
+      closeButton.focus();
+    });
+  });
+  zoomButton.addEventListener('click', () => zoom(!viewport.classList.contains('is-zoomed')));
+  closeButton.addEventListener('click', () => dialog.close());
+  dialog.addEventListener('click', event => { if (event.target === dialog) dialog.close(); });
+  dialog.addEventListener('close', () => { lastTrigger?.focus(); });
+})();

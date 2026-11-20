@@ -83,6 +83,19 @@ barplot(
 )
 dev.off()
 
+# OPTIONAL CHECK: Compare your result with these known values from the
+# fictional data. This checks arithmetic only; it is not model validation.
+stopifnot(
+  isTRUE(all.equal(
+    unname(result$reported_cases_per_100k_pop_years),
+    c(5.60, 4.33, 2.38, 3.91)
+  )),
+  isTRUE(all.equal(
+    unname(result$reported_outbreaks_per_10m_pop_years),
+    c(80.00, 46.67, 25.00, 45.45)
+  ))
+)
+
 # STEP 8. Interpretation questions.
 # 1. Does the region with the most outbreaks have the most case events?
 # 2. Does ranking by a count match ranking by population-time frequency?
