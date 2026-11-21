@@ -1,79 +1,60 @@
-# Hammad Ur Rehman Bajwa — Academic website
+# Hammad Ur Rehman Bajwa | Academic Website
 
-A responsive academic portfolio for **Hammad Ur Rehman Bajwa, DVM, PhD**, an infectious disease epidemiologist. The homepage displays the current affiliation as **Postdoctoral Research Associate — U. of I. (2026)**. Built as static HTML, CSS, and JavaScript for GitHub Pages.
+**Personal Academic Website | Infectious Disease Epidemiology · One Health · Computational Research**
 
-## Publish to GitHub Pages
+This repository hosts the personal academic website of **Hammad Ur Rehman Bajwa, DVM, PhD**, a Postdoctoral Research Associate at the University of Illinois Urbana-Champaign.
 
-Repository: `https://github.com/hrbajwa/hrbajwa.github.io`  
-Public website: `https://hrbajwa.github.io/`
+The website provides an overview of my academic background, research interests, scholarly contributions, and educational resources related to infectious disease epidemiology and public health.
 
-1. Extract the ZIP.
-2. Upload **all of the files INSIDE the ZIP** (not a containing folder) to the root of the `hrbajwa.github.io` repository. Replace files of the same name when necessary. Keep the `assets` folder.
-3. Go to repository **Settings > Pages** and choose `Deploy from a branch` / `main` / `/ (root)`.
-4. Wait until the Pages deployment completes and refresh the live site.
+**Website:** https://hrbajwa.github.io/
 
-If you use a locally cloned repository instead, copy all files into your repository and run:
+## Research Interests
 
-```powershell
-git pull origin main
-git add .
-git commit -m "Update profile and collaboration form"
-git push origin main
-```
+My research interests span infectious disease epidemiology, genomic epidemiology, One Health, disease surveillance, spatial and temporal epidemiology, statistical modeling, and computational approaches to understanding disease dynamics.
 
-## Contact form — ACTIVATION REQUIRED
+I am particularly interested in integrating epidemiological, genomic, ecological, and geographical information to improve our understanding of infectious disease emergence, distribution, and transmission.
 
-The collaboration form in `index.html` uses **FormSubmit.co**, a third-party form backend, to deliver form submissions to `hrbajwa22@gmail.com`.
+## Epidemiology Learning & Methods
 
-A static GitHub Pages site cannot itself send emails. The form requires a ONE-TIME activation before notifications are delivered.
+The website includes an educational section developed to support undergraduate and graduate students, early-career researchers, and professionals interested in epidemiological research and data analysis.
 
-1. Publish the site and open `https://hrbajwa.github.io/`.
-2. Send a genuine test enquiry using the form (name, email address, subject, message).
-3. FormSubmit should email an activation request to **hrbajwa22@gmail.com**. Open the inbox (and spam folder) and confirm the form's activation using the link from FormSubmit.
-4. Send a second test enquiry and check that the message arrives in Gmail with the specified subject and text. Note that the service may show a CAPTCHA challenge.
+The resources provide concise introductions to:
 
-**Until activation has been completed, do not assume the form is delivering messages.** We have not independently tested actual email delivery from this file package.
+- Epidemiological study design and research planning
+- Measures of disease frequency and association
+- Temporal and spatial epidemiological analysis
+- Statistical modeling and analytical assumptions
+- Predictive modeling and machine learning
+- Reproducible data analysis using R
 
-The form includes a hidden honeypot field and uses the provider's default anti-spam measures. Visitor messages pass through FormSubmit (a third-party service); do not request sensitive information. If you change the public domain, also update the hidden `_next` redirect field in `index.html`.
+The educational section also includes visual guides for epidemiological study planning and analytical method selection, along with annotated R examples using synthetic datasets.
 
-## Files
+**Explore the educational resources:** https://hrbajwa.github.io/learning.html
 
-- `index.html` — homepage, academic content, contact form
-- `styles.css` — responsive site styling
-- `script.js` — navigation, copyright year, and contact email subject
-- `thanks.html` — thank-you page used after a successful form submission
-- `assets/hammad-bajwa-profile.webp` — your optimized professional portrait
-- `assets/favicon.svg` — favicon
+## Website Features
 
-## Customization
+- Responsive academic portfolio
+- Research and scholarly publication information
+- Educational resources and interactive visual guides
+- Downloadable R learning materials
+- Professional collaboration and contact form
 
-- Change text and credentials in `index.html`.
-- Change email address both in the visible links and the contact form `action` URL.
-- Add publications in the Publications section.
-- Do not upload restricted or nonpublic research data.
+## Technology
 
-## Monochrome design
+The website is developed using **HTML, CSS, and JavaScript** and hosted through **GitHub Pages**.
 
-This edition uses a strict black/white editorial palette with greyscale portrait photography, shorter academic text, high-contrast buttons and a compact collaboration form.
+## Educational Use and Attribution
 
+The learning materials are intended for educational purposes and introductory methodological guidance. They reference established epidemiological literature and relevant reporting guidelines.
 
-## Learning & Methods hub (new)
+Illustrative analytical examples use synthetic data. Researchers should evaluate underlying assumptions, adapt analytical procedures to their study design, and validate code and results before application to research datasets.
 
-- `learning.html` — original, concise educational overview of epidemiological study design, disease-frequency measures, temporal/spatial analysis, statistical modeling, machine learning, and methodological sources.
-- `learning/r/01_counts_and_rates.R` — original base-R worked example with synthetic data, definitions, safeguards, output and interpretation questions. No real outbreak data.
-- Homepage has a compact Learning & Methods teaser and navigation link.
-- No third-party textbook PDFs, figures or supplied textbook datasets are included. Two user-provided overview diagrams are included as separate original website image assets.
-- The learning example is illustrative, not a validated research workflow. Before using with real data, check numerator, denominator, time-at-risk, case definitions, sampling, missingness and reporting completeness.
-- Before distributing additional code, test it and check dependency licenses. For research use, plan a separate, reviewed open-source methods repository.
+## Contact and Collaboration
 
-## Visual guides and click-to-enlarge viewer
+For research discussions, academic collaborations, or methodological inquiries, please visit the contact section of the website.
 
-- `assets/study-design-guide-preview.webp` and `assets/analytical-approach-guide-preview.webp` are responsive webpage previews.
-- `assets/study-design-guide.png` and `assets/analytical-approach-guide.png` are the full-resolution user-provided diagrams.
-- Click a preview to open a keyboard-accessible dialog. Press **Esc** or **Close** to exit, select **Zoom to 100%** to scroll over the original-size diagram, or open the original in a separate tab.
-- The diagrams simplify study planning and model selection; their order and arrows do not create an evidence hierarchy or replace discipline-specific method selection.
-- The R script includes known-answer sanity checks but was not executed with R during this generation because R was not installed in the build environment. Do not claim it is validated for research.
+**Academic profile:** https://hrbajwa.github.io/
 
-## Update online without PowerShell
+---
 
-Upload the **contents** of the extracted folder to `https://github.com/hrbajwa/hrbajwa.github.io/upload/main`. Existing files with the same path will be replaced. New diagram PNG/WEBP files will appear in `assets/`. Confirm the commit and successful deployment in Actions.
+© 2026 Hammad Ur Rehman Bajwa. All rights reserved unless otherwise indicated.
